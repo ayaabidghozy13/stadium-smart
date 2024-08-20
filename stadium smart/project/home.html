@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Stadiums</title>
+    <link rel="stylesheet" href="home.css">
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Stadiums</div>
+        <ul class="nav-links">
+            <li><a href="admin.html">Admin</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#locales">Locales</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <h1><b>Welcome to Private Stadiums</b></h1>
+            <h1>Your ultimate destination for sports events and more!</h1>
+            <button class="cta-button">Learn More</button>
+        </div>
+    </header>
+
+    <section class="locales" id="locales">
+        <h2>Our Locales</h2>
+        <div class="locale-container" id="localesContainer">
+            <!-- Locale cards will be dynamically added here -->
+        </div>
+    </section>
+
+    <section class="intro" id="intro">
+        <div class="intro-content">
+            <img src="yyy.png" alt="Sports excitement" class="animated-image">
+            <div class="intro-text">
+                <h2>Discover Our Services</h2>
+                <p>Explore a wide range of services that cater to all your needs. From top-notch facilities to excellent
+                    customer support, find everything you need for an unforgettable experience.</p>
+                <button class="cta-button">Explore Services</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+        <div class="service-container">
+            <div class="service">
+                <img src="https://img.freepik.com/photos-gratuite/entreprise-assise-table-dans-cafe-se-reposant_7502-9269.jpg?t=st=1719025464~exp=1719029064~hmac=a3fb76bf610f7855419566a981b51bae3d76bc7382f9194406e5e49af14f153c&w=996"
+                    alt="Restaurant">
+                <h3>Restaurant</h3>
+                <p>Enjoy a variety of cuisines at our in-house restaurant.</p>
+            </div>
+            <div class="service">
+                <img src="https://img.freepik.com/photos-premium/piece-est-vide_1048944-4445615.jpg?w=1060"
+                    alt="Garden">
+                <h3>Garden</h3>
+                <p>Relax in our beautifully maintained gardens.</p>
+            </div>
+            <div class="service">
+                <img src="https://img.freepik.com/photos-gratuite/homme-se-preparant-pour-match-basket-ball-dans-casier_23-2150847250.jpg?t=st=1719025892~exp=1719029492~hmac=a6efd37f2c3e16a44b88a7d0af259d3fbc02ab1448b45a53c4947fa275f4cdd0&w=996"
+                    alt="Bathrooms">
+                <h3>Bathrooms</h3>
+                <p>Clean and hygienic bathroom facilities.</p>
+            </div>
+            <div class="service">
+                <img src="https://img.freepik.com/photos-premium/homme-devant-douche_1111059-19788.jpg?w=1060"
+                    alt="Showers">
+                <h3>Showers</h3>
+                <p>State-of-the-art shower facilities available.</p>
+            </div>
+            <div class="service">
+                <img src="https://img.freepik.com/photos-premium/homme-portant-chapeau-vert-se-tient-devant-fond-vert_772785-14579.jpg?w=740"
+                    alt="Security">
+                <h3>Security</h3>
+                <p>24/7 security for your safety and peace of mind.</p>
+            </div>
+            <div class="service">
+                <img src="https://img.freepik.com/photos-premium/capture-complete-objets-rouges_1048944-174207.jpg?w=826"
+                    alt="Pricing">
+                <h3>Pricing</h3>
+                <p>Competitive pricing for all our services.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="events" id="events">
+        <h2>Past Events</h2>
+        <div class="event-container">
+            <div class="event">
+                <img src="https://img.freepik.com/photos-premium/eco-concept-groupe-benevoles_23-2147807203.jpg?w=996"
+                    alt="Event 1">
+                <h3>Stadium Clean Day</h3>
+                <p>The Stadium Clean Day, where volunteers come together to maintain and enhance the beauty of our
+                    beloved stadium. This event is perfect for individuals, families, and groups who are passionate
+                    about keeping our environment clean and green.</p>
+            </div>
+            <div class="event">
+                <img src="https://img.freepik.com/photos-premium/concept-environnement-benevolat_23-2147807186.jpg?w=996"
+                    alt="Event 2">
+                <h3>Charity Runs and Marathons</h3>
+                <p>Participate in charity runs and marathons organized at our stadium. Support noble causes while
+                    enjoying the camaraderie of fellow runners. An inspiring event for fitness enthusiasts and
+                    philanthropists alike.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>Private Stadiums</h2>
+                <p>Your ultimate destination for sports events and more!</p>
+                <div class="contact">
+                    <span><i class="fa fa-phone"></i> &nbsp; +123 456 7890</span>
+                    <span><i class="fa fa-envelope"></i> &nbsp; info@privatestadiums.com</span>
+                </div>
+                <div class="socials">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#locales">Locales</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#login">Login</a></li>
+                    <li><a href="#signup">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Private Stadiums. All rights reserved.
+        </div>
+    </footer>
+
+
+    <script src="home.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <div class="background-image"></div>
+    <div class="container">
+        <div class="dashboard-box">
+            <h2>Game Session Management</h2>
+            <form id="sessionForm">
+                <div class="user-box">
+                    <input type="text" id="teamName" required>
+                    <label>Team Name</label>
+                    <span class="error" id="teamNameError"></span>
+                </div>
+                <div class="user-box">
+                    <input type="number" id="numPlayers" required min="4">
+                    <label>Number of Players</label>
+                    <span class="error" id="numPlayersError"></span>
+                </div>
+                <div class="user-box">
+                    <input type="time" id="startTime" required>
+                    <label>From</label>
+                    <span class="error" id="startTimeError"></span>
+                </div>
+                <div class="user-box">
+                    <input type="time" id="endTime" required>
+                    <label>To</label>
+                    <span class="error" id="endTimeError"></span>
+                </div>
+                <div id="errorMessage" class="error-message"></div>
+                <button type="button" onclick="register()">Register</button>
+            </form>
+        </div>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

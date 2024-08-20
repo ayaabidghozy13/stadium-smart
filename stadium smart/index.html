@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Stadiums</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="stadium.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="calandrier.css">
+    <link rel="stylesheet" href="locallist.css">
+    <link rel="stylesheet" href="formpage.css">
+    <link rel="stylesheet" href="stadiumlist.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Stadiums</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#locales">Locales</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#login">Login</a></li>
+            <li><a href="#signup">Sign Up</a></li>
+            <li id="adminLink" style="display: none;"><a href="#local-list-page">Admin</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container for Pages -->
+    <div id="main-container">
+        <div id="home-page" class="page">
+            <!-- Home Page Content -->
+            <h2>Home Page</h2>
+            <p>Welcome to the Private Stadiums website.</p>
+        </div>
+        <div id="signup-page" class="page">
+            <!-- Signup Page Content -->
+            <h2>Sign Up</h2>
+            <form>
+                <label for="new-username">Username:</label>
+                <input type="text" id="new-username" name="new-username" required>
+                <label for="new-password">Password:</label>
+                <input type="password" id="new-password" name="new-password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        <div id="login-page" class="page">
+            <!-- Login Page Content -->
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <label for="role">Role:</label>
+                <select id="role" name="role" required>
+                    <option value="admin">Admin</option>
+                    <option value="security">Security Man</option>
+                </select>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div id="stadium-page" class="page">
+            <!-- Stadium Page Content -->
+            <div class="background-image"></div>
+            <div class="container">
+                <h1>Select a Stadium</h1>
+                <div class="stadium-buttons">
+                    <button onclick="navigateToCalendar('Stadium 1')">Stadium 1</button>
+                    <button onclick="navigateToCalendar('Stadium 2')">Stadium 2</button>
+                    <button onclick="navigateToCalendar('Stadium 3')">Stadium 3</button>
+                </div>
+            </div>
+        </div>
+        <div id="calandrier-page" class="page">
+            <!-- Calendar Page Content -->
+            <div class="background-image"></div>
+            <div class="container">
+                <div class="dashboard-box">
+                    <h2>Game Session Calendar</h2>
+                    <div class="controls">
+                        <select id="yearSelect" onchange="generateCalendar()"></select>
+                        <select id="monthSelect" onchange="generateCalendar()">
+                            <option value="0">January</option>
+                            <option value="1">February</option>
+                            <option value="2">March</option>
+                            <option value="3">April</option>
+                            <option value="4">May</option>
+                            <option value="5">June</option>
+                            <option value="6">July</option>
+                            <option value="7">August</option>
+                            <option value="8">September</option>
+                            <option value="9">October</option>
+                            <option value="10">November</option>
+                            <option value="11">December</option>
+                        </select>
+                    </div>
+                    <div id="calendar"></div>
+                </div>
+            </div>
+            <div id="errorMessage" class="error-message"></div>
+        </div>
+        <div id="dashboard-page" class="page">
+            <!-- Dashboard Page Content -->
+            <div class="background-image"></div>
+            <div class="container">
+                <div class="dashboard-box">
+                    <h2>Game Session Management</h2>
+                    <form id="sessionForm">
+                        <div class="user-box">
+                            <input type="text" id="teamName" required>
+                            <label>Team Name</label>
+                        </div>
+                        <div class="user-box">
+                            <input type="number" id="numPlayers" required>
+                            <label>Number of Players</label>
+                        </div>
+                        <div class="user-box">
+                            <input type="time" id="startTime" required>
+                            <label>From</label>
+                        </div>
+                        <div class="user-box">
+                            <input type="time" id="endTime" required>
+                            <label>To</label>
+                        </div>
+                        <div id="errorMessage" class="error-message"></div>
+                        <button type="button" onclick="register()">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="local-list-page" class="page">
+            <!-- Local List Page Content -->
+            <div class="sidebar">
+                <a href="#home" class="icon">🏠 Home</a>
+                <a href="#local-list-page" class="icon">📍 Locales</a>
+                <a href="#form-page" class="icon">➕ Add Local</a>
+                <a href="#login" class="icon">🔒 Login</a>
+            </div>
+            <div class="content">
+                <h1>Local List</h1>
+                <div id="localesContainer" class="locales-container">
+                    <!-- Locale cards will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+        <div id="form-page" class="page">
+            <!-- Form Page Content -->
+            <div class="sidebar">
+                <a href="#home" class="icon">🏠 Home</a>
+                <a href="#local-list-page" class="icon">📍 Locales</a>
+                <a href="#form-page" class="icon">➕ Add Local</a>
+                <a href="#login" class="icon">🔒 Login</a>
+            </div>
+            <div class="content">
+                <h1>Add New Locale</h1>
+                <form id="addLocaleForm">
+                    <label for="localeNumber">Locale Number:</label>
+                    <input type="text" id="localeNumber" required>
+                    <label for="localeAddress">Address:</label>
+                    <input type="text" id="localeAddress" required>
+                    <label for="numStadiums">Number of Stadiums:</label>
+                    <input type="number" id="numStadiums" required>
+                    <label for="securityEmail">Security Man Email:</label>
+                    <input type="email" id="securityEmail" required>
+                    <label for="localeImage">Locale Image URL:</label>
+                    <input type="text" id="localeImage" required>
+                    <button type="submit">Add Locale</button>
+                </form>
+            </div>
+        </div>
+        <div id="stadium-list-page" class="page">
+            <!-- Stadium List Page Content -->
+            <div class="sidebar">
+                <a href="#home" class="icon">🏠 Home</a>
+                <a href="#local-list-page" class="icon">📍 Locales</a>
+                <a href="#form-page" class="icon">➕ Add Local</a>
+                <a href="#login" class="icon">🔒 Login</a>
+            </div>
+            <div class="content">
+                <h1>Stadium List</h1>
+                <form id="addStadiumForm">
+                    <label for="stadiumNumber">Stadium Number:</label>
+                    <input type="text" id="stadiumNumber" required>
+                    <button type="submit">Add Stadium</button>
+                </form>
+                <h2>Stadiums</h2>
+                <table id="stadiumsTable">
+                    <thead>
+                        <tr>
+                            <th>Stadium Number</th>
+                            <th>Reserved</th>
+                            <th>Reservation Date</th>
+                            <th>Number of Players</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Stadium data will be dynamically added here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="home.js"></script>
+    <script src="login.js"></script>
+    <script src="signup.js"></script>
+    <script src="stadium.js"></script>
+    <script src="dashboard.js"></script>
+    <script src="calandrier.js"></script>
+    <script src="locallist.js"></script>
+    <script src="formpage.js"></script>
+    <script src="stadiumlist.js"></script>
+    <script>
+        // Navigation Script
+        document.addEventListener('DOMContentLoaded', () => {
+            const pages = document.querySelectorAll('.page');
+            const navLinks = document.querySelectorAll('.nav-links a');
+
+            function showPage(pageId) {
+                pages.forEach(page => {
+                    page.style.display = page.id === pageId ? 'block' : 'none';
+                });
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    const targetPage = this.getAttribute('href').substring(1) + '-page';
+                    showPage(targetPage);
+                });
+            });
+
+            // Default to home page
+            showPage('home-page');
+        });
+
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.style.display = page.id === pageId ? 'block' : 'none';
+            });
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

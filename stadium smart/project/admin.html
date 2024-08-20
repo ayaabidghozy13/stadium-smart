@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- Include Leaflet CSS from CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="moving-background">
+    <div class="sidebar">
+        <h2>Dashboard</h2>
+        <ul>
+            <li><a href="#" onclick="showPage('localList')">Local List</a></li>
+            <li><a href="#" onclick="showPage('addLocal')">Add Local</a></li>
+            <li><a href="#" onclick="showPage('stadiumList')">Stadium List</a></li>
+            <li><a href="#" onclick="showPage('addStadium')">Add Stadium</a></li>
+            <li><a href="#" onclick="showPage('securityManList')">Security Man List</a></li>
+            <li><a href="#" onclick="showPage('addSecurityMan')">Add Security Man</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div id="localList" class="page">
+            <h2>Local List</h2>
+            <div class="local-list">
+                <!-- Local cards will be appended here by JavaScript -->
+            </div>
+        </div>
+        <div id="addLocal" class="page">
+            <form id="addLocalForm" class="add-local-form">
+                <h2>Add Local</h2>
+                <label for="localName">Local Name/Number</label>
+                <input type="text" id="localName" name="localName" required>
+
+                <label for="localLocation">Location</label>
+                <div id="map"></div>
+                <input type="hidden" id="localLocation" name="localLocation">
+
+                <label for="localImage">Image</label>
+                <input type="file" id="localImage" name="localImage" accept="image/*" required>
+
+                <label for="securityMan">Security Man ID/Name (optional)</label>
+                <input type="text" id="securityMan" name="securityMan">
+
+                <button type="button" onclick="navigateToAddSecurityMan()">Add Security Man</button>
+                <button type="submit">Add Local</button>
+            </form>
+        </div>
+        <div id="stadiumList" class="page">
+            <h2>Stadium List</h2>
+            <div class="stadium-list">
+                <!-- Stadium cards will be appended here by JavaScript -->
+            </div>
+        </div>
+        <div id="addStadium" class="page">
+            <form id="addStadiumForm" class="add-stadium-form">
+                <h2>Add Stadium</h2>
+                <label for="stadiumNumber">Stadium Number/ID</label>
+                <input type="text" id="stadiumNumber" name="stadiumNumber" required>
+
+                <button type="submit">Add Stadium</button>
+            </form>
+        </div>
+        <div id="securityManList" class="page">
+            <h2>Security Man List</h2>
+            <div class="security-man-list">
+                <!-- Security man cards will be appended here by JavaScript -->
+            </div>
+        </div>
+        <div id="addSecurityMan" class="page">
+            <form id="addSecurityManForm" class="add-security-man-form">
+                <h2>Add Security Man</h2>
+                <label for="securityManName">Name</label>
+                <input type="text" id="securityManName" name="securityManName" required>
+
+                <label for="securityManLocation">Location</label>
+                <input type="text" id="securityManLocation" name="securityManLocation" required>
+
+                <label for="securityManEmail">Email</label>
+                <input type="email" id="securityManEmail" name="securityManEmail" required>
+
+                <label for="securityManPassword">Set Password</label>
+                <input type="password" id="securityManPassword" name="securityManPassword" required>
+
+                <label for="securityManImage">Image</label>
+                <input type="file" id="securityManImage" name="securityManImage" accept="image/*" required>
+
+                <button type="submit">Add Security Man</button>
+            </form>
+        </div>
+    </div>
+    <!-- Include Leaflet JS from CDN -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- Your custom JS -->
+    <script src="scripts.js"></script>
+</body>
+
+</html>

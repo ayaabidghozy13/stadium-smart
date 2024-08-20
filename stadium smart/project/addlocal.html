@@ -1,0 +1,18 @@
+<form id="addLocalForm" class="add-local-form">
+    <h2>Add Local</h2>
+    <label for="localName">Local Name/Number</label>
+    <input type="text" id="localName" name="localName" required>
+
+    <label for="localLocation">Location</label>
+    <div id="map"></div>
+    <input type="hidden" id="localLocation" name="localLocation">
+
+    <label for="localImage">Image</label>
+    <input type="file" id="localImage" name="localImage" accept="image/*" required>
+
+    <label for="securityMan">Security Man ID/Name (optional)</label>
+    <input type="text" id="securityMan" name="securityMan">
+
+    <button type="button" onclick="navigateToAddSecurityMan()">Add Security Man</button>
+    <button type="submit">Add Local</button>
+</form>

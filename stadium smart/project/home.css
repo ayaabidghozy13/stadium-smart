@@ -1,0 +1,240 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    background: url('https://img.freepik.com/photos-premium/stade-football-haut-concept-excitation-energie-ai-generative_888418-9386.jpg?w=1380') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    background-color: rgba(5, 26, 5, 0.9);
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+}
+
+.navbar .nav-links li {
+    padding: 0.5em 1em;
+}
+
+.navbar .nav-links li a {
+    color: #faf6f6;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navbar .nav-links li a:hover {
+    color: #077f47;
+}
+
+.hero {
+    background: url('https://img.freepik.com/photos-premium/stade-football-haut-concept-excitation-energie-ai-generative_888418-9386.jpg?w=1380') no-repeat center center/cover;
+    color: #fff;
+    padding: 4em 2em;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 80vh;
+}
+
+.hero-content {
+    animation: slideIn 1.5s ease-in-out;
+}
+
+.cta-button {
+    padding: 1em 2em;
+    background-color: #072c18;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1em;
+}
+
+.cta-button:hover {
+    background-color: #114f1f;
+}
+
+.locales,
+.services,
+.events {
+    padding: 2em 1em;
+    background-color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    position: relative;
+}
+
+.locales h2,
+.services h2,
+.events h2 {
+    margin-bottom: 1em;
+    color: #062106;
+}
+
+.locale-container,
+.service-container,
+.event-container {
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.locale,
+.service,
+.event {
+    background-color: #fff;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: translateY(50px);
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.3s;
+}
+
+.locale img,
+.service img,
+.event img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1em;
+}
+
+.intro {
+    padding: 2em 1em;
+    background-color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+}
+
+.intro-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+.intro-content img {
+    max-width: 50%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.intro-content img:hover {
+    transform: scale(1.05);
+}
+
+.intro-text {
+    max-width: 50%;
+}
+
+.footer {
+    background-color: #0b250b;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 1em;
+}
+
+.footer-section h2 {
+    margin-bottom: 1em;
+}
+
+.footer-section .contact span {
+    display: block;
+    margin: 0.5em 0;
+}
+
+.footer-section .socials a {
+    margin: 0 0.5em;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.footer-section .socials a:hover {
+    color: #062114;
+}
+
+.footer-section .links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section .links ul li {
+    margin-bottom: 0.5em;
+}
+
+.footer-section .links ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section .links ul li a:hover {
+    color: #08230e;
+}
+
+.footer-bottom {
+    padding: 1em 2em;
+    background-color: #073107;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Jost', sans-serif;
+    background-color: #141e30;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    background: url('champ-football-americain_23-2151117532.avif') no-repeat center center/cover;
+}
+
+.background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.6;
+    animation: float 10s infinite ease-in-out;
+
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar-section {
+    width: 80%;
+    max-width: 1000px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.dashboard-box h2 {
+    margin: 0 0 20px;
+    padding: 0;
+    color: #76c043;
+    text-transform: uppercase;
+}
+
+.controls {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+#calendar.vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.days-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.day,
+.empty-day {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    flex: 0 0 auto;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.day:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.day .sessions-container {
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.day .session {
+    background: #76c043;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.3s;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.day .session:hover {
+    background: #5ba331;
+}
+
+.day .start-button {
+    display: none;
+    margin-top: 5px;
+    background: #76c043;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.day .start-button:hover {
+    background: #5ba331;
+}

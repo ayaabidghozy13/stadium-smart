@@ -1,0 +1,12 @@
+{
+  "name": "stadium-project",
+  "version": "1.0.0",
+  "description": "A project for managing stadium game sessions",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -p 8080"
+  },
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  }
+}

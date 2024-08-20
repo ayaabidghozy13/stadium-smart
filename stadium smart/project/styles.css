@@ -1,0 +1,224 @@
+/* Add this at the beginning of your styles.css */
+.moving-background {
+    background: linear-gradient(270deg, #ff7e5f, #feb47b);
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 15s ease infinite;
+    -moz-animation: AnimationName 15s ease infinite;
+    -o-animation: AnimationName 15s ease infinite;
+    animation: AnimationName 15s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-o-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+/* Existing CSS code */
+body {
+    display: flex;
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    width: 250px;
+    background: #333;
+    color: #fff;
+    height: 100vh;
+    padding: 15px;
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    background: #f4f4f4;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.add-local-form,
+.add-security-man-form,
+.add-stadium-form {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-local-form h2,
+.add-security-man-form h2,
+.add-stadium-form h2 {
+    margin-bottom: 20px;
+}
+
+.add-local-form label,
+.add-security-man-form label,
+.add-stadium-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.add-local-form input,
+.add-local-form button,
+.add-security-man-form input,
+.add-security-man-form button,
+.add-stadium-form input,
+.add-stadium-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.add-local-form button,
+.add-security-man-form button,
+.add-stadium-form button {
+    background: #76c043;
+    color: #fff;
+    cursor: pointer;
+}
+
+.add-local-form button:hover,
+.add-security-man-form button:hover,
+.add-stadium-form button:hover {
+    background: #5ba331;
+}
+
+#map {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 10px;
+}
+
+.local-list,
+.stadium-list,
+.security-man-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.local-card,
+.stadium-card,
+.security-man-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.local-card img,
+.stadium-card img,
+.security-man-card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.local-card h3,
+.stadium-card h3,
+.security-man-card h3 {
+    margin: 10px 0;
+}
+
+.local-card p,
+.stadium-card p,
+.security-man-card p {
+    margin: 5px 0;
+}
+
+.local-card button,
+.stadium-card button,
+.security-man-card button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.local-card button:hover,
+.stadium-card button:hover,
+.security-man-card button:hover {
+    background: #555;
+}

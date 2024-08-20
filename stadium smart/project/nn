@@ -1,0 +1,25 @@
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+export { auth, db };
+function createAccount() {
+    var firstName = document.getElementById('firstName').value.trim();
+    var lastName = document.getElementById('lastName').value.trim();
+    var identifier = document.getElementById('identifier').value.trim();
+    var password = document.getElementById('password').value.trim();
+    var role = document.getElementById('role').value;
+    databse.ref('users/' + identifier).set({
+        firstName: firstName,
+        lastName: lastName,
+        identifier: identifier,
+        password: password,
+        role: role
+
+    })
+
+    alert("acount created successfully");
+
+}
